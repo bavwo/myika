@@ -28,6 +28,40 @@
     <title>Grid: Free Landing Page Template from Uisual</title>
   </head>
   <body>
+    
+<!-- Progress bar when scrolling the page -->
+<div class="progress">
+<div class="progress-bar" id="progressBar"></div>
+</div>
+<style type="text/css">
+.progress {
+    position: fixed;
+    height: 20px;
+    width: 100%;
+    background: #FFD700;
+}
+.progress-bar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 20px;
+    width: 0%;
+    background: #4682B4;
+}
+</style>
+<script>
+function progressBar() {
+    let scroll = document.body.scrollTop || document.documentElement.scrollTop;
+    let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    let scrolled = scroll / height * 100;
+
+    document.getElementById('progressBar').style.width = scrolled + '%';
+}
+
+window.addEventListener('scroll', progressBar);
+</script>
+<!-- Progress bar when scrolling the page -->  
+    
     <header role="banner" class="ui-section-header">
       <div class="ui-layout-container">
         <div class="ui-section-header__layout ui-layout-flex">
